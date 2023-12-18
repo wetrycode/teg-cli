@@ -34,14 +34,12 @@ func ExecuteCmd() {
 		// has an action associated with it:
 
 		Run: func(cmd *cobra.Command, args []string) {
-			logger.Infof("准备启动%s爬虫", args[0])
 			if len(args) < 1 {
 				cmd.Help()
 				return
 			}
 
 			projectName := args[0]
-			logger.Infof("准备启动%s爬虫", projectName)
 			// 假设你有一个函数来处理创建项目的逻辑
 			if len(strings.TrimSpace(spiderName)) == 0 {
 				panic("spider name can not be empty")
@@ -55,7 +53,7 @@ func ExecuteCmd() {
 			if err != nil {
 				panic(err)
 			}
-			logger.Infof("项目%s创建成功", projectDir)
+			logger.Infof("The project %s was created successfully.", projectDir)
 		},
 	}
 	var addCmd = &cobra.Command{
