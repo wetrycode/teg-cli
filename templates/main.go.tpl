@@ -18,12 +18,12 @@ func main() {
 	Downloader := tegenaria.NewDownloader(tegenaria.DownloadWithTLSConfig(&tls.Config{InsecureSkipVerify: true, MaxVersion: tls.VersionTLS12}))
 	Engine := tegenaria.NewEngine(tegenaria.EngineWithDownloader(Downloader))
 	Engine.RegisterSpiders({{.SpiderName}}SpiderInstance)
-	pipe := &pipelines.{{.SpiderName}}Pipeline{
+	pipe := &pipelines.{{.ProjectName}}Pipeline{
 		Priority: 1,
 	}
 	Engine.RegisterPipelines(pipe)
 
-	middleware := &middlewares.{{.SpiderName}}DownloadMiddler{
+	middleware := &middlewares.{{.ProjectName}}DownloadMiddler{
 		Priority: 1,
 	}
 	Engine.RegisterDownloadMiddlewares(middleware)

@@ -20,3 +20,9 @@
  ```bash
   teg-cli add spider --name Spider1 --filename spider1 -o ./demo/spiders
 ```
+
+- Init an exist project  
+
+```bash
+teg-cli init --spider demo -m github.com/wetrycode/demo
+```
